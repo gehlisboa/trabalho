@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Listar Postagens</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <div class="container" id="lista"></div>
+
+    <script>
+        // Selecionando a div onde a lista será exibida
+        let lista = document.getElementById('lista');
+
+        let postagem = { };
+
+        function getPostagens(){
+            isLoading = true;
+
+            fetch('http://localhost/API-PWII/backend/listar_postagens.php',
+                {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    }
+                }
+            )
+            .then(response => response.json())
+            .then(response => {
+                response.postagens.forEach(post => {
+                    // Montando o visual da lista
+                    let row = document.createElement('div');
+                    row.classList.add('row', 'border', 'p-2', 'mb-2');
+                    row.setAttribute('id', post.CodPostagem);
+                    row.setAttribute('onclick', 'alert("Postagem ' + post.Titulo + ' selecionada (ID: ' + post.CodPostagem + ')")');
+
+                    let col = document.createElement('div');
+                    col.classList.add('col-12');
+
+                    let p = document.createElement('p');
+                    p.innerText = post.CodPostagem + ' - ' + post.Titulo;
+
+                    col.appendChild(p);
+                    row.appendChild(col);
+                    lista.appendChild(row);
+                });
+
+            })
+            .catch(erro => {
+                console.log(erro);
+            })
+            .finally(()=>{
+                isLoading = false;
+            })
+        }
+
+        getPostagens(); // Buscar Dados
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>    
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog - Buscar Postagem</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+
+    <script>
+        let postagem = { CodPostagem: '1' };
+        let isLoading = false;
+
+        function getPostagens(){
+            isLoading = true;
+
+            fetch('http://localhost/api/backend/buscar_postagem_por_id.php',
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(postagem)
+                }
+            )
+            .then(response => response.json())
+            .then(response => {
+                console.log(response);
+            })
+            .catch(erro => {
+                console.log(erro);
+            })
+            .finally(()=>{
+                isLoading = false;
+            })
+        }
+
+        getPostagens(); // Buscar Dados da Postagem
+    </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>    
+  </body>
+</html>

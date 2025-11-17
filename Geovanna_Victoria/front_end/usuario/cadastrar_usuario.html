@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cadastrar Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container mt-4">
+
+    <h3 class="mb-4">Criar Conta</h3>
+
+    <div id="alertCadastro" class="alert" style="display:none;"></div>
+
+    <div class="card p-4 shadow-sm">
+        <form id="formCadastro">
+
+            <div class="mb-3">
+                <label class="form-label">Usuário</label>
+                <input type="text" name="usuario" class="form-control" required>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Senha</label>
+                <input type="password" name="senha" class="form-control" required>
+            </div>
+
+            <button class="btn btn-primary w-100" type="submit">Cadastrar</button>
+
+        </form>
+    </div>
+</div>
+
+<script>
+document.getElementById("formCadastro").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    let alertBox = document.getElementById("alertCadastro");
+
+    let dados = {
+        usuario: this.usuario.value,
+        senha: this.senha.value
+    };
+
+    fetch("http://localhost/api/backend/criar_login.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(dados)
+    })
+    .then(r => r.json())
+    .then(r => {
+
+        alertBox.style.display = "block";
+
+        if (r.mensagem) {
+            alertBox.className = "alert alert-success";
+            alertBox.innerText = r.mensagem;
+        } else {
+            alertBox.className = "alert alert-danger";
+            alertBox.innerText = r.erro;
+        }
+
+    })
+    .catch(() => {
+        alertBox.style.display = "block";
+        alertBox.className = "alert alert-danger";
+        alertBox.innerText = "Erro ao conectar com o servidor.";
+    });
+
+});
+</script>
+
+</body>
+</html>
+
+
