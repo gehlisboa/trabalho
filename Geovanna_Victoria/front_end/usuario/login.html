@@ -44,7 +44,7 @@ document.getElementById("formLogin").addEventListener("submit", function(event) 
         senha: this.senha.value
     };
 
-    fetch("http://localhost/api/backend/validar_login.php", {
+    fetch("http://localhost/trabalho/Geovanna_Victoria/back_end/usuario/login.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(dados)

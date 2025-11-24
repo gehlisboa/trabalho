@@ -1,6 +1,6 @@
 <?php
-include 'cors.php';
-include 'conexao.php';
+include '../cors.php';
+include '../conexao.php';
 
 header("Content-Type: application/json; charset=utf-8");
 

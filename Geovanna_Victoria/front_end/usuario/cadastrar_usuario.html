@@ -44,7 +44,7 @@ document.getElementById("formCadastro").addEventListener("submit", function(even
         senha: this.senha.value
     };
 
-    fetch("http://localhost/api/backend/criar_login.php", {
+    fetch("http://localhost/trabalho/Geovanna_Victoria/back_end/usuario/cadastrar_usuario.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(dados)
