@@ -187,7 +187,7 @@ margin-right: 10px;
   height: 420px !important;      /* Altura fixa = deixa todos iguais */
   border-radius: 12px;
   padding: 15px;
-  background: #0e0520;
+  background: #100427;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   margin-bottom: 30px;           /* espaço entre cards */
 }
@@ -282,7 +282,152 @@ body {
   border-radius: 3px;
 }
 
+/* ===== CARD POST  ===== */
 
+#lista {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px; /* AQUI aumenta o espaço (pode aumentar mais se quiser) */
+  margin-top: 30px;
+}
+
+.card {
+  width: 80%;
+  max-width: 900px;
+  margin: 0 auto;
+  background: #250344!important;
+  border: none !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  padding: 20px; /* deixa mais respirado */
+}
+
+
+.card img {
+  width: 100%;               /* agora a imagem ocupa a largura do card certinho */
+  height: 260px;
+  object-fit: cover;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+/* Título neon */
+.card-title {
+  color: #00eaff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+/* Texto do conteúdo */
+.card-text {
+  color: #c8b4e3;
+  font-size: 1rem;
+}
+
+/* Autor */
+.card-text strong {
+  color: #ff67ff;
+}
+
+/* Data */
+.text-muted {
+  color: #6f4a82 !important;
+}
+
+/* Espaçamento interno */
+.card-body {
+  padding: 25px;
+}
+.btn-post {
+  background: #150021;
+  border: 2px solid #00eaff;
+  color: #00eaff;
+  padding: 15px;
+  font-size: 1.3rem;
+  border-radius: 20px;
+  text-align: center;
+  transition: 0.2s;
+  display: block;
+  width: 45%;     /* 🔥 volta ao tamanho original do card */
+  margin: 0 auto; /* 🔥 centraliza igual o card */
+  margin-bottom: 20px;
+}
+
+.btn-outline-cadastro {
+  background-color: #ff2793 !important; 
+  color: #570b46 !important;
+  border: none !important;
+  font-weight: 600;               /* evita borrado */
+  font-size: 22px !important;     /* texto maior */
+  padding: 14px 16px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease; /* remove scale para evitar blur */
+  filter: none !important;        /* garante nitidez */
+  text-shadow: none !important;   /* remove sombra borrada */
+}
+.btn-outline-cadastro:hover {
+  background-color: #ff78da !important;
+}
+
+input.form-control {
+  background-color: #4b007d !important; /* roxo forte */
+  border: 2px solid hsl(277, 87%, 53%) !important; /* borda roxa */
+  color: #ffffff !important; /* texto branco */
+  border-radius: 8px;
+}
+
+input.form-control::placeholder {
+  color: #e5b6ff !important; /* placeholder lilás */
+}
+
+input.form-control:focus {
+  background-color: #5a0099 !important; /* roxo mais claro ao focar */
+  border: 2px solid #d070ff !important; /* borda roxa glow */
+  box-shadow: 0 0 10px #d070ff !important; /* glow */
+  outline: none !important;
+}
+/* Labels (Usuário, Senha) */
+label {
+  color: #ff2793 !important; /* rosa claro */
+  font-weight: bold;
+}
+
+/* Link "Já tenho uma conta (Login)" */
+a {
+  color:#ff2793 !important;
+}
+
+/* Ajustar hover do link */
+a:hover {
+  color: #ffc8ff !important; /* rosa mais claro no hover */
+}
+/* Texto rosa claro */
+.btn-outline-a {
+  background-color: #ff2793  ;
+  color: #ff8efb !important;
+  font-weight: bold;
+  text-decoration: none;
+}
+.btn-entrar {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background-color: #ff2793; /* rosa */
+  color: #ffffff;
+  padding: 14px 0;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn-entrar:hover {
+  background-color: #ff74da; /* rosa mais claro */
+  transform: scale(1.03); /* efeito de botão pressionado */
+}
 
 
 

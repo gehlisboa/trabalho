@@ -82,55 +82,63 @@
         </div>
       </div>
     </nav>
-    <div class="container mt-5">
+    <!-- <div class="container mt-5">
       <h3 class="mb-4">Postagens</h3>
       <div class="row" id="lista"></div>
-    </div>
+    </div> -->
+      <h1 class="mb-4">Postagens</h1>
 
-    <a href="criar_postagem.html" class="btn btn-outline-secondary w-100 mt-3">
-      Criar um post!!
-  </a>
+ 
+      <!-- BOTÃO AQUI (EXATAMENTE ONDE VOCÊ QUER) -->
+<a href="criar_postagem.html" class="btn btn-post w-60 mb-2">
+    Criar um post!!
+</a>
+
+<div class="row" id="lista"></div>
+
+    
     <script>
       const lista = document.getElementById('lista');
 
-      function getPostagens() {
-        fetch('http://localhost/trabalho/Geovanna_Victoria/back_end/postagem/listar_postagem.php', {
-          method: 'GET',
-          headers: { 'Content-Type': 'application/json' }
-        })
-        .then(response => response.json())
-        .then(response => {
-          lista.innerHTML = '';
-          if(response.postagens && Array.isArray(response.postagens)) {
-            response.postagens.forEach(post => {
-              const card = document.createElement('div');
-              card.classList.add('col-12', 'mb-3');
+function getPostagens() {
+  fetch('http://localhost/trabalho/Geovanna_Victoria/back_end/postagem/listar_postagem.php', {
+    method: 'GET',
+    headers: { 'Content-Type': 'application/json' }
+  })
+  .then(response => response.json())
+  .then(response => {
+    lista.innerHTML = '';
+    if(response.postagens && Array.isArray(response.postagens)) {
+      response.postagens.forEach(post => {
+        const card = document.createElement('div');
+        card.classList.add('col-12', 'mb-3');
 
-              card.innerHTML = `
-                <div class="card shadow-sm">
-                  <div class="card-body">
-                    <h5 class="card-title">${post.Titulo}</h5>
-                    <p class="card-text">${post.Conteudo}</p>
-                    <p class="card-text"><strong>Autor:</strong> ${post.Autor}</p>
-                    <p class="card-text"><small class="text-muted">Criado em: ${post.DataCriacao}</small></p>
-                    ${post.Imagem ? `<img src="${post.Imagem}" class="img-fluid mt-2" />` : ''}
-                  </div>
-                </div>
-              `;
+        card.innerHTML = `
+      <div class="card col-12">
+      <div class="card-body">
+      <h5 class="card-title">${post.Titulo}</h5>
+      <p class="card-text">${post.Conteudo}</p>
+      <p class="card-text"><strong>Autor:</strong> ${post.Autor}</p>
+      <p class="card-text"><small class="text-muted">Criado em: ${post.DataCriacao}</small></p>
+      ${post.Imagem ? `<img src="${post.Imagem}" class="img-fluid mt-2" />` : ''}
+    </div>
+  </div>
+`;
 
-              lista.appendChild(card);
-            });
-          } else {
-            lista.innerHTML = '<p class="text-danger">Nenhuma postagem encontrada.</p>';
-          }
-        })
-        .catch(err => {
-          console.log(err);
-          lista.innerHTML = '<p class="text-danger">Erro ao carregar postagens.</p>';
-        });
-      }
 
-      getPostagens();
+        lista.appendChild(card);
+      });
+    } else {
+      lista.innerHTML = '<p class="text-danger">Nenhuma postagem encontrada.</p>';
+    }
+  })
+  .catch(err => {
+    console.log(err);
+    lista.innerHTML = '<p class="text-danger">Erro ao carregar postagens.</p>';
+  });
+}
+
+getPostagens();
     </script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
