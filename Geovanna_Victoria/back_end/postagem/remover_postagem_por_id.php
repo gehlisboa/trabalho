@@ -2,33 +2,32 @@
 include '../cors.php';
 include '../conexao.php';
 
+header("Content-Type: application/json; charset=UTF-8");
 
-if ($_SERVER["REQUEST_METHOD"] == "DELETE") {
-// Obtém o corpo da solicitação DELETE
-$data = file_get_contents("php://input");
+// Aceita DELETE ou POST (servidores locais às vezes não enviam DELETE corretamente)
+if ($_SERVER["REQUEST_METHOD"] === "DELETE" || $_SERVER["REQUEST_METHOD"] === "POST") {
 
+    // Lê JSON vindo da requisição
+    $data = file_get_contents("php://input");
+    $requestData = json_decode($data);
 
-// Decodifica o JSON para um objeto PHP
-$requestData = json_decode($data);
+    if (!isset($requestData->CodPostagem)) {
+        echo json_encode(["mensagem" => "ID não recebido."]);
+        exit;
+    }
 
+    $codigo = $requestData->CodPostagem;
 
-// Agora você pode acessar os dados usando $requestData
-$codigo = $requestData->CodPostagem;
+    // Query delete
+    $sql = "DELETE FROM Postagens WHERE CodPostagem='$codigo'";
 
-
-// CodPostagem é o nome da coluna que está sendo enviado pelo cliente
-$sql = "DELETE FROM Postagens WHERE CodPostagem='$codigo'";
-
-
-if ($connection->query($sql) === true) {
-$response = [
-'mensagem' => 'Postagem apagada com sucesso!'
-];
-} else {
-$response = [
-'mensagem' => $connection->error
-];
-}
-echo json_encode($response);
+    if ($connection->query($sql) === TRUE) {
+        echo json_encode(["mensagem" => "Postagem apagada com sucesso!"]);
+    } else {
+        echo json_encode(["mensagem" => "Erro: " . $connection->error]);
+    }
 }
 ?>
+
+
+

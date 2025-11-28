@@ -33,7 +33,7 @@ body {
 {
   font-family: "Jersey 15", sans-serif !important;
   font-size: 28px;
-  color: #2efff5;
+  color: #2efff5 !important;
   
 }
 
@@ -341,19 +341,27 @@ body {
   padding: 25px;
 }
 .btn-post {
-  background: #150021;
-  border: 2px solid #00eaff;
-  color: #00eaff;
-  padding: 15px;
-  font-size: 1.3rem;
-  border-radius: 20px;
-  text-align: center;
-  transition: 0.2s;
   display: block;
-  width: 45%;     /* 🔥 volta ao tamanho original do card */
-  margin: 0 auto; /* 🔥 centraliza igual o card */
-  margin-bottom: 20px;
+  width: 45%;
+  margin: 0 auto;          /* 👈 CENTRALIZA */
+  text-align: center;
+  background-color: #27f1ff !important;
+  color: #25463b !important;
+  padding: 14px 0;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease;
+  border: none !important;
 }
+
+.btn-post:hover {
+  background-color: #7489ff !important;
+  transform: scale(1.03);
+}
+
+
 
 .btn-outline-cadastro {
   background-color: #ff2793 !important; 
@@ -414,8 +422,8 @@ a:hover {
   display: block;
   width: 100%;
   text-align: center;
-  background-color: #ff2793; /* rosa */
-  color: #ffffff;
+  background-color: #ff2793;
+  color: #ffffff !important; /* 👈 força o texto branco */
   padding: 14px 0;
   border-radius: 10px;
   font-size: 20px;
@@ -424,10 +432,37 @@ a:hover {
   transition: 0.3s ease;
 }
 
+
 .btn-entrar:hover {
   background-color: #ff74da; /* rosa mais claro */
   transform: scale(1.03); /* efeito de botão pressionado */
 }
+.btn-deletar {
+  background-color: #f24957;
+  color: #000 !important; 
+  border: none;
+  transition: 0.3s ease;
+}
+
+.btn-deletar:hover {
+  background-color: #a52121; /* tom mais escuro */
+  transform: scale(1.03);
+  color: #000;
+}
+
+.btn-editar {
+  background-color: rgb(52, 247, 189);
+  color: #000 !important; /* texto preto */
+  border: none;
+  transition: 0.3s ease;
+}
+
+.btn-editar:hover {
+  background-color: rgb(36, 211, 114); /* um pouco mais escuro */
+  transform: scale(1.03);
+  color: #000;
+}
+
 
 
 
