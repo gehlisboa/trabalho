@@ -1,261 +1,13 @@
-/* Fonte global */
+ /* body com as particulas */
 body {
   font-family: "Jersey 15", sans-serif;
   margin: 0;
   padding: 0;
-
-}
-
-.about-image {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin: 30px 0;
-}
-
-.about-image img {
-  max-width: 350px; /* Ajuste o tamanho que quiser */
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-/* Navbar maior e full-width */
-.custom-navbar {
-  padding: 20px 40px; /* deixa mais alta */
-  background-color:#0b0020;
-}
-
-/* Ajuste da fonte na navbar */
-.navbar,
-.navbar-brand,
-.nav-link 
-{
-  font-family: "Jersey 15", sans-serif !important;
-  font-size: 28px;
-  color: #2efff5 !important;
-  
-}
-
-/* Título */
-.titulo-login {
-  font-size: 60px;
-  margin-top: 40px;
-}
-
-/* Centralizar o card na tela */
-.login-container {
-  height: 70vh; /* ocupa o centro vertical */
-}
-
-/* Card quadrado grande */
-.login-card {
-  width: 400px;
-  padding: 25px;
-  border-radius: 20px;
-  background: #F24976;
-}
-.form-label {
-  font-size: 28px; /* ajuste o tamanho que quiser */
- 
-}
-.form-control {
-  font-size: 22px;
-  padding: 12px;
-}
-
-/* ======== ESTILO GLOBAL DO TEXTO ======== */
-
-/* Todos os títulos da página */
-h1{
-  text-align: center;
-  font-family: "Jersey 15", sans-serif;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  font-weight: 400;
-  color: #ff2e96;
-} 
-h2, h3, h4{
-  text-align: center;
-  font-family: "Jersey 15", sans-serif;
-  margin-top: 40px;
-  margin-bottom: 20px;
-  font-weight: 400;
-  color: #2ef8ff;
- 
-}
-
-p{
-  color: #c37cfd;
-}
-
-/* Tamanhos específicos para hierarquia */
-h1 {
-  font-size: 60px;
-}
-
-h2 {
-  font-size: 48px;
-}
-
-h3 {
-  font-size: 38px;
-}
-/* Caixa central — segura o texto no meio */
-.text-container {
-    max-width: 700px;     
-    margin: 0 auto;       
-    text-align: center;    
-    padding: 20px;
-}
-
-/* Títulos */
-.text-container h1 {
-    font-size: 3rem;
-    margin-bottom: 25px;
-}
-
-.text-container h2 {
-    font-size: 2.2rem;
-    margin-top: 40px;
-    margin-bottom: 15px;
-}
-
-/* Parágrafos maiores */
-.text-container p {
-    font-size: 1.4rem;
-    line-height: 1.8;
-    margin-bottom: 25px;
-    text-align: center;
-}
-.post-box {
-background: #fd06ab;
-border-radius: 12px;
-padding: 15px;
-display: flex;
-gap: 10px;
-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-
-
-.post-input {
-background: #fc6be8;
-width: 100%;
-border-radius: 20px;
-padding: 12px 18px;
-border: none;
-font-size: 26px;
-}
-
-
-.post-card {
-margin-top: 25px;
-border-radius: 12px;
-box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-padding: 20px;
-background:#fd06ab;
-}
-
-
-.post-card p {
-font-size: 28px;
-color: cornsilk;
-}
-
-
-.post-card h6 {
-font-size: 30px;
-margin: 0;
-}
-
-
-.post-card small {
-font-size: 22px;
-}
-
-
-.card-profile-img {
-width: 60px;
-height: 60px;
-border-radius: 50%;
-object-fit: cover;
-margin-right: 10px;
-}
- /* Mantém o modelo original, só padroniza o tamanho */
-.news-card {
-  height: 420px !important;      /* Altura fixa = deixa todos iguais */
-  border-radius: 12px;
-  padding: 15px;
-  background: #100427;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  margin-bottom: 30px;           /* espaço entre cards */
-}
-
-/* Imagem no topo */
-.news-img {
-  width: 100%;
-  height: 160px;                 /* todas as imagens iguais */
-  object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 12px;
-}
-
-/* Título */
-.news-title {
-  font-size: 24px;
-  text-align: center;
-}
-
-/* Sub */
-.news-sub {
-  font-size: 16px;
-  text-align: center;
-}
-
-/* Texto */
-.news-text {
-  font-size: 18px;
-  text-align: center;
-}
-.news-card img {
-  width: 100%;
-  height: 200px;      /* deixa todas exatamente do mesmo tamanho */
-  object-fit: cover;  /* corta a imagem para caber sem deformar */
-  border-radius: 8px;
-}
-/* ===== BACKGROUND COM PARTÍCULAS PARADAS + EFEITO NEON ===== */
-body {
   background: #0b0020;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
 }
-
-/* container das partículas */
-.particles-bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  pointer-events: none;
-}
-
-/* estilos gerais */
-.particle {
-  position: absolute;
-  opacity: 0.9;
-  animation: neonPulse 2.5s infinite ease-in-out alternate;
-}
-
-/* efeitos */
-@keyframes neonPulse {
-  0% { transform: scale(1); filter: blur(0px); opacity: 0.5; }
-  100% { transform: scale(1.15); filter: blur(1.5px); opacity: 1; }
-}
-
 /* bolinhas */
 .particle.dot-cyan {
   background: #2eeaff;
@@ -281,14 +33,231 @@ body {
   border: 3px solid #ff2ea8;
   border-radius: 3px;
 }
+/* container das partículas */
+.particles-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  pointer-events: none;
+}
 
-/* ===== CARD POST  ===== */
+/* geral */
+.particle {
+  position: absolute;
+  opacity: 0.9;
+  animation: neonPulse 2.5s infinite ease-in-out alternate;
+}
+
+/* efeito */
+@keyframes neonPulse {
+  0% { transform: scale(1); filter: blur(0px); opacity: 0.5; }
+  100% { transform: scale(1.15); filter: blur(1.5px); opacity: 1; }
+}
+
+#status {
+  color: #2affb1 !important; 
+  font-size: 22px;             
+  text-align: center;
+}
+
+.about-image {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 30px 0;
+}
+
+.about-image img {
+  max-width: 350px; 
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.container-fluid-noticias {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.img-noticia {
+  width: 60%;          
+  height: auto;        
+  display: block;
+  margin: 0 auto;   
+}
+
+
+
+
+/* Navbar */
+.custom-navbar {
+  padding: 20px 40px; 
+  background-color:#0b0020;
+}
+.navbar,
+.navbar-brand,
+.nav-link 
+{
+  font-family: "Jersey 15", sans-serif !important;
+  font-size: 28px;
+  color: #2efff5 !important;
+  
+}
+
+.navbar-toggler {
+  border-color: #2efff5 !important;
+}
+
+.navbar-toggler-icon {
+  filter: invert(80%) sepia(80%) saturate(300%) hue-rotate(120deg);
+}
+
+
+/* login */
+.titulo-login {
+  font-size: 60px;
+  margin-top: 40px;
+}
+.login-container {
+  height: 70vh;
+}
+.login-card {
+  width: 400px;
+  padding: 25px;
+  border-radius: 20px;
+  background: #F24976;
+}
+.form-label {
+  font-size: 28px;
+}
+.form-control {
+  font-size: 22px;
+  padding: 12px;
+}
+
+/* textos e titulos */
+h1{
+  text-align: center;
+  font-family: "Jersey 15", sans-serif;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-weight: 400;
+  color: #ff2e96;
+} 
+h2, h3, h4{
+  text-align: center;
+  font-family: "Jersey 15", sans-serif;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-weight: 400;
+  color: #2ef8ff;
+ 
+}
+
+p{
+  color: #c37cfd;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+h2 {
+  font-size: 48px;
+}
+
+h3 {
+  font-size: 38px;
+}
+/* texto no meio */
+.text-container {
+    max-width: 700px;     
+    margin: 0 auto;       
+    text-align: center;    
+    padding: 20px;
+}
+li{
+  color: rgb(255, 47, 172);
+}
+
+/* títulos */
+.text-container h1 {
+    font-size: 3rem;
+    margin-bottom: 25px;
+}
+
+.text-container h2 {
+    font-size: 2.2rem;
+    margin-top: 40px;
+    margin-bottom: 15px;
+}
+
+/* parágrafos */
+.text-container p {
+    font-size: 1.4rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+
+ /* card noticia */
+.news-card {
+  background: #100427;
+  color: greenyellow;
+  padding: 15px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+
+  
+  min-height: 420px;
+  
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  
+  border: 2px solid transparent;
+  transition: 0.3s ease;
+}
+
+/* imagem da card */
+.news-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+/* hover neon*/
+.news-card:hover {
+  background-color: rgb(153, 29, 255);
+  transform: scale(1.03);
+  color: #000;
+
+  border-color: #d26bff;
+  box-shadow:
+    0 0 5px   #d26bff,
+    0 0 10px  #d26bff,
+    0 0 20px  #d26bff,
+    0 0 40px  #d26bff;
+}
+
+
+
+/* card do post*/
 
 #lista {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 40px; /* AQUI aumenta o espaço (pode aumentar mais se quiser) */
+  gap: 40px;
   margin-top: 30px;
 }
 
@@ -300,12 +269,12 @@ body {
   border: none !important;
   border-radius: 20px !important;
   overflow: hidden !important;
-  padding: 20px; /* deixa mais respirado */
+  padding: 20px; 
 }
 
 
 .card img {
-  width: 100%;               /* agora a imagem ocupa a largura do card certinho */
+  width: 100%;              
   height: 260px;
   object-fit: cover;
   border-top-left-radius: 10px;
@@ -340,10 +309,59 @@ body {
 .card-body {
   padding: 25px;
 }
+
+
+/* Labels e inputs e textarea*/
+label {
+  color: #ff2793 !important; /* rosa claro */
+  font-weight: bold;
+}
+
+/* link login */
+a {
+  color:#ff2793 !important;
+}
+
+/*  hover do link */
+a:hover {
+  color: #ffc8ff !important;
+}
+input.form-control {
+  background-color: #4b007d !important;
+  border: 2px solid hsl(277, 87%, 53%) !important; 
+  color: #ffffff !important; 
+  border-radius: 8px;
+}
+input.form-control::placeholder {
+  color: #e5b6ff !important;
+}
+input.form-control:focus {
+  background-color: #5a0099 !important; 
+  border: 2px solid #d070ff !important; 
+  box-shadow: 0 0 10px #d070ff !important;
+  outline: none !important;
+}
+
+textarea.form-control{
+  background-color: #4b007d !important;
+  border: 2px solid hsl(277, 87%, 53%) !important;
+  color: #ffffff !important; 
+  border-radius: 8px;
+}
+textarea.form-control::placeholder {
+  color: #e5b6ff !important; 
+}
+textarea.form-control:focus {
+  background-color: #5a0099 !important; 
+  border: 2px solid #d070ff !important; 
+  box-shadow: 0 0 10px #d070ff !important; 
+  outline: none !important;
+}
+/* botões  */
 .btn-post {
   display: block;
   width: 45%;
-  margin: 0 auto;          /* 👈 CENTRALIZA */
+  margin: 0 auto; 
   text-align: center;
   background-color: #27f1ff !important;
   color: #25463b !important;
@@ -360,58 +378,43 @@ body {
   background-color: #7489ff !important;
   transform: scale(1.03);
 }
+.btn-postar {
+  display: block;
+  width: 45%;
+  margin: 0 auto;         
+  text-align: center;
+  background-color: #27f1ff !important;
+  color: #25463b !important;
+  padding: 14px 0;
+  border-radius: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s ease;
+  border: none !important;
+}
 
-
+.btn-postar:hover {
+  background-color: #7489ff !important;
+  transform: scale(1.03);
+}
 
 .btn-outline-cadastro {
   background-color: #ff2793 !important; 
   color: #570b46 !important;
   border: none !important;
-  font-weight: 600;               /* evita borrado */
-  font-size: 22px !important;     /* texto maior */
+  font-weight: 600;               
+  font-size: 22px !important;     
   padding: 14px 16px;
   border-radius: 10px;
-  transition: background-color 0.3s ease; /* remove scale para evitar blur */
-  filter: none !important;        /* garante nitidez */
-  text-shadow: none !important;   /* remove sombra borrada */
+  transition: background-color 0.3s ease; 
+  filter: none !important;        
+  text-shadow: none !important;   
 }
 .btn-outline-cadastro:hover {
   background-color: #ff78da !important;
 }
 
-input.form-control {
-  background-color: #4b007d !important; /* roxo forte */
-  border: 2px solid hsl(277, 87%, 53%) !important; /* borda roxa */
-  color: #ffffff !important; /* texto branco */
-  border-radius: 8px;
-}
-
-input.form-control::placeholder {
-  color: #e5b6ff !important; /* placeholder lilás */
-}
-
-input.form-control:focus {
-  background-color: #5a0099 !important; /* roxo mais claro ao focar */
-  border: 2px solid #d070ff !important; /* borda roxa glow */
-  box-shadow: 0 0 10px #d070ff !important; /* glow */
-  outline: none !important;
-}
-/* Labels (Usuário, Senha) */
-label {
-  color: #ff2793 !important; /* rosa claro */
-  font-weight: bold;
-}
-
-/* Link "Já tenho uma conta (Login)" */
-a {
-  color:#ff2793 !important;
-}
-
-/* Ajustar hover do link */
-a:hover {
-  color: #ffc8ff !important; /* rosa mais claro no hover */
-}
-/* Texto rosa claro */
 .btn-outline-a {
   background-color: #ff2793  ;
   color: #ff8efb !important;
@@ -423,7 +426,7 @@ a:hover {
   width: 100%;
   text-align: center;
   background-color: #ff2793;
-  color: #ffffff !important; /* 👈 força o texto branco */
+  color: #ffffff !important; 
   padding: 14px 0;
   border-radius: 10px;
   font-size: 20px;
@@ -434,8 +437,8 @@ a:hover {
 
 
 .btn-entrar:hover {
-  background-color: #ff74da; /* rosa mais claro */
-  transform: scale(1.03); /* efeito de botão pressionado */
+  background-color: #ff74da;
+  transform: scale(1.03); 
 }
 .btn-deletar {
   background-color: #f24957;
@@ -445,23 +448,25 @@ a:hover {
 }
 
 .btn-deletar:hover {
-  background-color: #a52121; /* tom mais escuro */
+  background-color: #a52121; 
   transform: scale(1.03);
   color: #000;
 }
 
 .btn-editar {
   background-color: rgb(52, 247, 189);
-  color: #000 !important; /* texto preto */
+  color: #000 !important; 
   border: none;
   transition: 0.3s ease;
 }
 
 .btn-editar:hover {
-  background-color: rgb(36, 211, 114); /* um pouco mais escuro */
+  background-color: rgb(36, 211, 114); 
   transform: scale(1.03);
   color: #000;
 }
+
+
 
 
 

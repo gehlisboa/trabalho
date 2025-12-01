@@ -12,9 +12,13 @@
  
      <!-- Bootstrap -->
      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
- 
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
      <!-- Seu CSS -->
      <link href="../../front_end/style.css" rel="stylesheet">
+
+     <!-- favicon -->
+      <link rel="icon" type="image/x-icon" href="../imgs/favicons/favicon-16x16.png">
 
 
 </head>
@@ -57,12 +61,49 @@
         <div class="particle dot-pink" style="width:9px; height:9px; top: 62%; left: 82%;"></div>
         <div class="particle dot-pink" style="width:6px; height:6px; top: 78%; left: 50%;"></div>
         <div class="particle dot-pink" style="width:7px; height:7px; top: 90%; left: 80%;"></div>
+
+        <!-- ===== BOLINHAS PINK ===== -->
+        <div class="particle dot-pink" style="width:6px; height:6px; top: 5%; left: 75%;"></div>
+        <div class="particle dot-pink" style="width:9px; height:9px; top: 18%; left: 20%;"></div>
+        <div class="particle dot-pink" style="width:7px; height:7px; top: 30%; left: 65%;"></div>
+        <div class="particle dot-pink" style="width:5px; height:5px; top: 48%; left: 25%;"></div>
+        <div class="particle dot-pink" style="width:9px; height:9px; top: 62%; left: 82%;"></div>
+        <div class="particle dot-pink" style="width:6px; height:6px; top: 78%; left: 50%;"></div>
+        <div class="particle dot-pink" style="width:7px; height:7px; top: 90%; left: 80%;"></div>
+
+         <!-- ===== BOLINHAS CYAN ===== -->
+        <div class="particle dot-cyan" style="width:7px; height:7px; top: 8%; left: 50%;"></div>
+        <div class="particle dot-cyan" style="width:6px; height:6px; top: 25%; left: 10%;"></div>
+        <div class="particle dot-cyan" style="width:9px; height:9px; top: 40%; left: 45%;"></div>
+        <div class="particle dot-cyan" style="width:8px; height:8px; top: 55%; left: 75%;"></div>
+        <div class="particle dot-cyan" style="width:5px; height:5px; top: 70%; left: 15%;"></div>
+        <div class="particle dot-cyan" style="width:6px; height:6px; top: 85%; left: 35%;"></div>
+        <div class="particle dot-cyan" style="width:8px; height:8px; top: 92%; left: 60%;"></div>
+
+        <!-- ===== QUADRADOS PINK ===== -->
+        <div class="particle square-pink" style="top: 12%; left: 60%;"></div>
+        <div class="particle square-pink" style="top: 28%; left: 80%;"></div>
+        <div class="particle square-pink" style="top: 35%; left: 50%;"></div>
+        <div class="particle square-pink" style="top: 48%; left: 70%;"></div>
+        <div class="particle square-pink" style="top: 65%; left: 55%;"></div>
+        <div class="particle square-pink" style="top: 72%; left: 90%;"></div>
+
+        <!-- ===== QUADRADOS CYAN ===== -->
+        <div class="particle square-cyan" style="top: 10%; left: 10%;"></div>
+        <div class="particle square-cyan" style="top: 15%; left: 35%;"></div>
+        <div class="particle square-cyan" style="top: 30%; left: 20%;"></div>
+        <div class="particle square-cyan" style="top: 45%; left: 5%;"></div>
+        <div class="particle square-cyan" style="top: 55%; left: 40%;"></div>
+        <div class="particle square-cyan" style="top: 75%; left: 25%;"></div>
+        <div class="particle square-cyan" style="top: 85%; left: 10%;"></div>
+        <div class="particle square-cyan" style="top: 20%; left: 70%;"></div>
+        <div class="particle square-cyan" style="top: 60%; left: 85%;"></div>
       
       </div>
       
       
   
-      <!-- NAVBAR FULL-WIDTH E MAIOR -->
+      <!-- NAVBAR-->
       <nav class="navbar navbar-expand-lg custom-navbar">
         <div class="container-fluid">
           <a class="navbar-brand" href="../postagem/principal.html">Inicial</a>
@@ -88,7 +129,7 @@
 
 <div class="container mt-4">
 
-    <h3 class="mb-4">Criar Conta</h3>
+    <h1 class="mb-4">Criar Conta</h1>
 
     <div id="alertCadastro" class="alert" style="display:none;"></div>
 
@@ -106,15 +147,14 @@
             </div>
 
             <button class="btn btn-outline-cadastro w-100" type="submit">Cadastrar</button>
-
-        </form>
-
-        <!--  BOTÃO DE LOGIN -->
+        
+             <!--  BOTÃO DE LOGIN -->
         <a href="login.html" class="btn btn-outline w-100 mt-3">
             Já tenho uma conta (Login)
         </a>
-
+          </form>
     </div>
+
 </div>
 
 <script>
@@ -155,6 +195,10 @@ document.getElementById("formCadastro").addEventListener("submit", function(even
 
 });
 </script>
+
+
+<!-- Bootstrap JS (necessário para o menu funcionar) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
