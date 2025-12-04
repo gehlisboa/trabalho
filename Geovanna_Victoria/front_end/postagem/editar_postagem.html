@@ -62,32 +62,35 @@
       
       </div>
       
-      <!-- NAVBAR -->
-      <nav class="navbar navbar-expand-lg custom-navbar">
-        <div class="container-fluid">
-          <a class="navbar-brand" href="principal.html">Inicial</a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-  
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="listar_postagem.html">Posts</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="noticias.html">Notícias</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="../usuario/cadastrar_usuario.html">Cadastrar</a>
-              </li>
-            </ul>
-          </div>
+        <!-- NAVBAR  -->
+    <nav class="navbar navbar-expand-lg custom-navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../postagem/principal.html">Pixelift</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../postagem/principal.html">Inicial</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../front_end/postagem/listar_postagem.html">Posts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../front_end/postagem/noticias.html">Notícias</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../front_end/usuario/cadastrar_usuario.html">Cadastrar</a>
+            </li>
+          </ul>
         </div>
-      </nav>
+      </div>
+    </nav>
 
     <div class="container mt-5">
-        <h3 class="mb-4">Editar Postagem</h3>
+        <h1 class="mb-4">Editar Postagem</h1>
 
         <div class="card p-4 shadow-sm">
 
@@ -116,7 +119,7 @@
                 <input type="text" id="imagem" class="form-control" placeholder="https://exemplo.com/imagem.jpg">
             </div>
 
-            <button class="btn btn-editar w-100" onclick="editarPostagem()">
+            <button class="btn-editar-2 w-100" onclick="editarPostagem()">
                 Salvar Alterações
             </button>
 
@@ -125,60 +128,69 @@
     </div>
     
 
-    <script>
-        let isLoading = false;
+   <script>
+    let isLoading = false;
 
-        function editarPostagem() {
+    function editarPostagem() {
 
-            let postagem = {
-                CodPostagem: document.getElementById('codPostagem').value,
-                Titulo: document.getElementById('titulo').value,
-                Conteudo: document.getElementById('conteudo').value,
-                Autor: document.getElementById('autor').value,
-                Imagem: document.getElementById('imagem').value
-            };
+        let postagem = {
+            CodPostagem: document.getElementById('codPostagem').value,
+            Titulo: document.getElementById('titulo').value,
+            Conteudo: document.getElementById('conteudo').value,
+            Autor: document.getElementById('autor').value,
+            Imagem: document.getElementById('imagem').value
+        };
 
-            if (!postagem.CodPostagem) {
-                document.getElementById("status").innerHTML =
-                    `<span class="text-danger">Informe o código da postagem.</span>`;
-                return;
-            }
-
-            isLoading = true;
+        if (!postagem.CodPostagem) {
             document.getElementById("status").innerHTML =
-                `<span class="text-primary">Atualizando...</span>`;
-
-            fetch('http://localhost/trabalho/Geovanna_Victoria/back_end/postagem/editar_postagem.php',
-                {
-                    method: 'PUT',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(postagem)
-                }
-            )
-            .then(response => response.json())
-            .then(response => {
-                console.log(response);
-
-                if (response.erro) {
-                    document.getElementById("status").innerHTML =
-                        `<span class="text-danger">${response.erro}</span>`;
-                } else {
-                    document.getElementById("status").innerHTML =
-                        `<span class="text-success">${response.mensagem}</span>`;
-                }
-            })
-            .catch(erro => {
-                console.log(erro);
-                document.getElementById("status").innerHTML =
-                    `<span class="text-danger">Erro ao enviar atualização.</span>`;
-            })
-            .finally(() => {
-                isLoading = false;
-            });
+                `<span class="text-danger">Informe o código da postagem.</span>`;
+            return;
         }
-    </script>
+
+        isLoading = true;
+        document.getElementById("status").innerHTML =
+            `<span class="text-primary">Atualizando...</span>`;
+
+        fetch('http://localhost/trabalho/Geovanna_Victoria/back_end/postagem/editar_postagem.php',
+            {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(postagem)
+            }
+        )
+        .then(response => response.json())
+        .then(response => {
+            console.log(response);
+
+            if (response.erro) {
+                document.getElementById("status").innerHTML =
+                    `<span class="text-danger">${response.erro}</span>`;
+            } else {
+                document.getElementById("status").innerHTML =
+                    `<span class="text-success">${response.mensagem}</span>`;
+
+                // 👉 REDIRECIONAMENTO APÓS ATUALIZAR COM SUCESSO
+                setTimeout(() => {
+                    window.location.href = "../../front_end/postagem/listar_postagem.html";
+                }, 1200);
+            }
+        })
+        .catch(erro => {
+            console.log(erro);
+            document.getElementById("status").innerHTML =
+                `<span class="text-danger">Erro ao enviar atualização.</span>`;
+        })
+        .finally(() => {
+            isLoading = false;
+        });
+    }
+</script>
+  
+<footer class="basic-footer">
+  <p>&copy; 2025 Pixelift. Todos os direitos reservados.</p>
+</footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>    
   </body>

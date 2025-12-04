@@ -7,7 +7,19 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
 }
+
+html, body {
+    height: 100%;
+}
+
+/* Conteúdo principal ocupa todo o espaço disponível */
+.container, .particles-bg, .card, .container-fluid {
+    flex: 1;
+}
+
 /* bolinhas */
 .particle.dot-cyan {
   background: #2eeaff;
@@ -91,29 +103,57 @@ body {
 }
 
 
-
-
 /* Navbar */
 .custom-navbar {
-  padding: 20px 40px; 
-  background-color:#0b0020;
-}
-.navbar,
-.navbar-brand,
-.nav-link 
-{
-  font-family: "Jersey 15", sans-serif !important;
-  font-size: 28px;
-  color: #2efff5 !important;
-  
+    padding: 20px 40px;
+    background: rgba(33, 16, 45, 0.45);      /* vidro escuro transparente */
+    border-bottom: 1px solid rgba(76, 23, 140, 0.15);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
 }
 
-.navbar-toggler {
-  border-color: #2efff5 !important;
+/* Marca PIXELLIFT */
+.custom-navbar .navbar-brand {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #ff008c !important;
+    text-shadow: 0 0 10px rgba(140, 41, 167, 0.4);
+    transition: 0.3s ease;
 }
 
-.navbar-toggler-icon {
-  filter: invert(80%) sepia(80%) saturate(300%) hue-rotate(120deg);
+.custom-navbar .navbar-brand:hover {
+    color: #ff4edb !important;
+    text-shadow: 0 0 14px rgba(255, 0, 200, 0.8);
+}
+
+/* Links */
+.custom-navbar .nav-link {
+    color: #2eeaff !important;
+    font-weight: 500;
+    margin-left: 22px;
+    font-size: 1.5rem;
+    transition: 0.3s ease;
+}
+
+.custom-navbar .nav-link:hover {
+    color: #ff008c !important;
+    text-shadow: 0 0 8px rgba(68, 201, 210, 0.7);
+}
+
+
+
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .custom-navbar {
+        padding: 15px 25px;
+    }
+
+    .custom-navbar .nav-link {
+        margin-left: 0;
+        padding: 10px 0;
+        font-size: 1.1rem;
+    }
 }
 
 
@@ -145,7 +185,6 @@ h1{
   font-family: "Jersey 15", sans-serif;
   margin-top: 40px;
   margin-bottom: 20px;
-  font-weight: 400;
   color: #ff2e96;
 } 
 h2, h3, h4{
@@ -153,13 +192,19 @@ h2, h3, h4{
   font-family: "Jersey 15", sans-serif;
   margin-top: 40px;
   margin-bottom: 20px;
-  font-weight: 400;
   color: #2ef8ff;
  
 }
 
 p{
   color: #c37cfd;
+}
+
+.lead {
+    font-size: 2.2rem !important;  /* aumenta o tamanho */
+    line-height: 1.6;               /* deixa mais espaçado e elegante */
+    font-weight: 300;               /* deixa o texto mais fino e profissional */
+  
 }
 
 h1 {
@@ -237,7 +282,7 @@ li{
 
 /* hover neon*/
 .news-card:hover {
-  background-color: rgb(153, 29, 255);
+  background-color: rgb(53, 17, 83);
   transform: scale(1.03);
   color: #000;
 
@@ -264,12 +309,12 @@ li{
 .card {
   width: 80%;
   max-width: 900px;
-  margin: 0 auto;
-  background: #250344!important;
+  margin: 0 auto; /* sem margem inferior extra */
+  background: #1d0941 !important;
   border: none !important;
   border-radius: 20px !important;
   overflow: hidden !important;
-  padding: 20px; 
+  padding: 20px;
 }
 
 
@@ -283,21 +328,20 @@ li{
 
 /* Título neon */
 .card-title {
-  color: #00eaff;
-  font-size: 1.5rem;
-  font-weight: bold;
+   color: #ff4482;
+  font-size: 2rem;
   margin-top: 15px;
 }
 
 /* Texto do conteúdo */
-.card-text {
+.card-text{
   color: #c8b4e3;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 /* Autor */
 .card-text strong {
-  color: #ff67ff;
+  color: #00eaff;
 }
 
 /* Data */
@@ -313,8 +357,8 @@ li{
 
 /* Labels e inputs e textarea*/
 label {
-  color: #ff2793 !important; /* rosa claro */
-  font-weight: bold;
+  color: #45b6ad !important; /* rosa claro */
+  
 }
 
 /* link login */
@@ -368,7 +412,6 @@ textarea.form-control:focus {
   padding: 14px 0;
   border-radius: 10px;
   font-size: 20px;
-  font-weight: bold;
   text-decoration: none;
   transition: 0.3s ease;
   border: none !important;
@@ -380,45 +423,43 @@ textarea.form-control:focus {
 }
 .btn-postar {
   display: block;
-  width: 45%;
+  width: 100%;
   margin: 0 auto;         
   text-align: center;
-  background-color: #27f1ff !important;
-  color: #25463b !important;
+  background-color: #ff27a9 !important;
+  color: #d7f9ed !important;
   padding: 14px 0;
   border-radius: 10px;
   font-size: 20px;
-  font-weight: bold;
-  text-decoration: none;
   transition: 0.3s ease;
   border: none !important;
 }
 
 .btn-postar:hover {
-  background-color: #7489ff !important;
+  background-color: #df74ff !important;
   transform: scale(1.03);
 }
 
 .btn-outline-cadastro {
   background-color: #ff2793 !important; 
-  color: #570b46 !important;
-  border: none !important;
-  font-weight: 600;               
+  color: #fbc8f0 !important;
+  border: none !important;             
   font-size: 22px !important;     
   padding: 14px 16px;
   border-radius: 10px;
-  transition: background-color 0.3s ease; 
+  transition: 0.3s ease; 
   filter: none !important;        
   text-shadow: none !important;   
 }
 .btn-outline-cadastro:hover {
   background-color: #ff78da !important;
+    transform: scale(1.03); 
+
 }
 
 .btn-outline-a {
   background-color: #ff2793  ;
   color: #ff8efb !important;
-  font-weight: bold;
   text-decoration: none;
 }
 .btn-entrar {
@@ -430,7 +471,6 @@ textarea.form-control:focus {
   padding: 14px 0;
   border-radius: 10px;
   font-size: 20px;
-  font-weight: bold;
   text-decoration: none;
   transition: 0.3s ease;
 }
@@ -465,6 +505,223 @@ textarea.form-control:focus {
   transform: scale(1.03);
   color: #000;
 }
+
+.btn-editar-2{
+ display: block;
+  width: 100%;
+  text-align: center;
+  background-color: #2aa79f;
+  color: #ffffff !important; 
+  padding: 14px 0;
+  border-radius: 10px;
+  font-size: 20px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn-editar-2:hover{
+background-color: rgb(36, 211, 114); 
+  transform: scale(1.03);
+  color: #000;
+}
+
+.btn-deletar-2{
+ display: block;
+  width: 100%;
+  text-align: center;
+  background-color: #ff2727;
+  color: #ffffff !important; 
+  padding: 14px 0;
+  border-radius: 10px;
+  font-size: 20px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn-deletar-2:hover{
+ background-color: #a52121; 
+  transform: scale(1.03);
+}
+
+
+/* --- CARDS DE VALORES (ATUALIZADO) --- */
+
+.values-card {
+    background: rgba(255, 255, 255, 0.07);
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    width: 100%;
+    max-width: 420px;
+    margin: 10px auto;                 /* MENOR espaçamento entre os cards */
+    min-height: 250px;
+}
+
+.values-card:hover {
+    transform: translateY(-6px);
+    border-color: #ff0080;
+}
+
+.values-card h5 {
+    font-weight: 700;
+    font-size: 1.35rem;
+    margin-bottom: 12px;
+    color: #fff;
+}
+
+.values-card p {
+    font-size: 1.4rem;
+    text-align: center;
+    line-height: 1.45;
+     color: #c37cfd;
+}
+
+/* --- GRID MAIS FECHADO ENTRE OS CARDS --- */
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 22px;                        /* ESPAÇAMENTO REDUZIDO ENTRE OS CARDS */
+    justify-items: center;
+}
+
+/* --- RESPONSIVIDADE --- */
+
+@media (max-width: 992px) {
+    .values-card {
+        max-width: 90%;
+        min-height: auto;
+        margin: 8px auto;             /* ainda mais compacto no tablet */
+    }
+
+    .values-grid {
+        gap: 18px;
+    }
+}
+
+@media (max-width: 576px) {
+    .values-card {
+        padding: 20px;
+        margin: 6px auto;             /* compacto no celular */
+    }
+
+    .values-grid {
+        gap: 14px;
+    }
+
+    .values-card h5 {
+        font-size: 1.2rem;
+    }
+
+    .values-card p {
+        font-size: 0.92rem;
+    }
+}
+
+/* Infos básicas antes do acordeão */
+.contact-info-wrapper p {
+    text-align: center;
+    font-size: 2rem;
+    color: #fff;
+    margin: 5px 0;
+}
+
+/* ===== ACORDEÃO NEOBRUTALISTA CYBERPUNK ===== */
+
+.cyber-accordion {
+    width: 100%;
+    max-width: 1400px;      
+    margin: 0 auto;
+}
+
+.cyber-accordion .accordion-item {
+    background: transparent;
+    border: 2px solid #4d4d4d;
+    border-radius: 14px;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease;
+}
+
+.cyber-accordion .accordion-item:hover {
+    border-color: #ea94f6;
+}
+
+.cyber-accordion .accordion-button {
+    background: rgba(120, 20, 130, 0.45);
+    color: #34f2ff;
+    font-size: 1.5rem;
+    padding: 24px;
+    border-radius: 14px;
+}
+
+.cyber-accordion .accordion-body {
+    color: #d7a5ff;
+    font-size: 1.5rem;
+    line-height: 1.55;
+}
+
+/* ===== MAPA ===== */
+
+.map-card {
+    max-width: 900px;                
+    margin: 60px auto;                  
+    padding: 22px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 22px;            
+    backdrop-filter: blur(10%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.map-wrapper {
+    border-radius: 18px;
+    overflow: hidden; /* deixa o iframe com bordas arredondadas */
+}
+
+.map-wrapper iframe {
+    width: 100%;
+    height: 360px;
+    border: none;
+}
+
+/* Footer estilo navbar */
+.basic-footer {
+    padding: 20px 40px;
+    background: rgba(33, 16, 45, 0.45);  /* vidro escuro transparente */
+    border-top: 1px solid rgba(76, 23, 140, 0.15);
+    box-shadow: 0 -6px 18px rgba(0,0,0,0.35);
+    text-align: center;
+    color: #2eeaff;       /* texto azul neon */
+    font-weight: 500;
+    font-size: 1.2rem;
+        margin-top: auto;
+}
+
+.basic-footer p {
+    margin: 0;
+}
+
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+    .map-card {
+        max-width: 95%;
+        padding: 16px;
+        border-radius: 18px;
+    }
+
+    .map-wrapper iframe {
+        height: 260px;
+    }
+}
+
+@media (max-width: 480px) {
+    .map-wrapper iframe {
+        height: 220px;
+    }
+}
+
+
+
 
 
 

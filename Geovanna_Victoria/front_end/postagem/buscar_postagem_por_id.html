@@ -1,12 +1,78 @@
-<<!doctype html>
+<!doctype html>
 <html lang="pt-br">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Blog - Buscar Postagem</title>
+    <title>Buscar Postagem</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+10&family=Jersey+15&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Seu CSS -->
+    <link href="../../front_end/style.css" rel="stylesheet">
+
+    <!-- favicon -->
+    <link rel="icon" type="image/x-icon" href="../imgs/favicons/favicon-16x16.png">
   </head>
-  <body class="bg-light">
+  <body>
+
+    <!-- ===================== PARTICULAS DE FUNDO ===================== -->
+    <div class="particles-bg">
+
+        <!-- QUADRADOS CYAN -->
+        <div class="particle square-cyan" style="top: 10%; left: 10%;"></div>
+        <div class="particle square-cyan" style="top: 15%; left: 35%;"></div>
+        <div class="particle square-cyan" style="top: 30%; left: 20%;"></div>
+        <div class="particle square-cyan" style="top: 45%; left: 5%;"></div>
+        <div class="particle square-cyan" style="top: 55%; left: 40%;"></div>
+        <div class="particle square-cyan" style="top: 75%; left: 25%;"></div>
+        <div class="particle square-cyan" style="top: 85%; left: 10%;"></div>
+        <div class="particle square-cyan" style="top: 20%; left: 70%;"></div>
+        <div class="particle square-cyan" style="top: 60%; left: 85%;"></div>
+
+        <!-- QUADRADOS PINK -->
+        <div class="particle square-pink" style="top: 12%; left: 60%;"></div>
+        <div class="particle square-pink" style="top: 28%; left: 80%;"></div>
+        <div class="particle square-pink" style="top: 35%; left: 50%;"></div>
+        <div class="particle square-pink" style="top: 48%; left: 70%;"></div>
+        <div class="particle square-pink" style="top: 65%; left: 55%;"></div>
+        <div class="particle square-pink" style="top: 72%; left: 30%;"></div>
+        <div class="particle square-pink" style="top: 82%; left: 75%;"></div>
+    </div>
+
+      <!-- NAVBAR  -->
+    <nav class="navbar navbar-expand-lg custom-navbar">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../postagem/principal.html">Pixelift</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../postagem/principal.html">Inicial</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../front_end/postagem/listar_postagem.html">Posts</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../front_end/postagem/noticias.html">Notícias</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../../front_end/usuario/cadastrar_usuario.html">Cadastrar</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ===================== CONTEÚDO ===================== -->
 
     <div class="container mt-5">
         <h3 class="mb-4">Buscar Postagem</h3>
@@ -17,7 +83,7 @@
                 <input type="number" id="codPostagem" class="form-control" placeholder="Digite o ID da postagem">
             </div>
 
-            <button class="btn btn-primary w-100" onclick="getPostagens()">
+            <button class="btn-postar" onclick="getPostagens()">
                 Buscar
             </button>
         </div>
@@ -25,6 +91,8 @@
         <div id="postagemContainer"></div>
     </div>
 
+
+    <!-- ===================== SCRIPT ===================== -->
     <script>
         let isLoading = false;
 
@@ -47,7 +115,6 @@
             )
             .then(response => response.json())
             .then(response => {
-                console.log(response);
                 container.innerHTML = '';
 
                 if(response.postagens && Array.isArray(response.postagens)){
@@ -69,7 +136,6 @@
                 }
             })
             .catch(erro => {
-                console.log(erro);
                 container.innerHTML = '<p class="text-danger">Erro na requisição.</p>';
             })
             .finally(()=>{
@@ -78,6 +144,11 @@
         }
     </script>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>    
+<footer class="basic-footer">
+  <p>&copy; 2025 Pixelift. Todos os direitos reservados.</p>
+</footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
   </body>
 </html>
