@@ -364,6 +364,7 @@ label {
 /* link login */
 a {
   color:#ff2793 !important;
+  font-size: x-large !important;
 }
 
 /*  hover do link */
@@ -462,6 +463,8 @@ textarea.form-control:focus {
   color: #ff8efb !important;
   text-decoration: none;
 }
+
+
 .btn-entrar {
   display: block;
   width: 100%;
