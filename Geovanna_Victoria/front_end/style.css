@@ -11,8 +11,9 @@ body {
   flex-direction: column;
 }
 
-html, body {
-    height: 100%;
+
+html, body{
+    height: 100% !important;
 }
 
 /* Conteúdo principal ocupa todo o espaço disponível */
@@ -83,11 +84,14 @@ html, body {
 }
 
 .about-image img {
+  margin-top: 2% !important;
   max-width: 350px; 
   width: 100%;
   height: auto;
   border-radius: 10px;
+  box-shadow: 0 0 8px #e138ff, 0 0 10px #6217a0;
 }
+
 .container-fluid-noticias {
   width: 100%;
   padding: 0;
@@ -317,6 +321,17 @@ li{
   padding: 20px;
 }
 
+.card-2{
+  width: 80%;
+  max-width: 900px;
+  margin: 0 auto; /* sem margem inferior extra */
+  background: #1d0941 !important;
+  border: none !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  padding: 20px;
+   margin-bottom: 7% !important;
+}
 
 .card img {
   width: 100%;              
@@ -458,13 +473,6 @@ textarea.form-control:focus {
 
 }
 
-.btn-outline-a {
-  background-color: #ff2793  ;
-  color: #ff8efb !important;
-  text-decoration: none;
-}
-
-
 .btn-entrar {
   display: block;
   width: 100%;
@@ -484,27 +492,37 @@ textarea.form-control:focus {
   transform: scale(1.03); 
 }
 .btn-deletar {
-  background-color: #f24957;
-  color: #000 !important; 
-  border: none;
-  transition: 0.3s ease;
+ background-color: #ff3545;   /* cor do botão */
+  color: #000 !important;      /* cor da letra */
+  border: none;                /* sem borda */
+  transition: 0.3s ease;       /* animação suave */
+  padding: 5px 5px;
+  font-size: 20px!important;            /* fonte pequena */
+  font-weight: normal;          /* peso da letra */
+  cursor: pointer;              /* efeito de mãozinha ao passar o mouse */
+  
+
 }
 
 .btn-deletar:hover {
-  background-color: #a52121; 
+  background-color: #8b1717; 
   transform: scale(1.03);
   color: #000;
 }
 
 .btn-editar {
-  background-color: rgb(52, 247, 189);
-  color: #000 !important; 
-  border: none;
-  transition: 0.3s ease;
+  background-color: rgb(52, 244, 247);
+  color: #000 !important;      /* cor da letra */
+  border: none;                /* sem borda */
+  transition: 0.3s ease;       /* animação suave */
+  padding: 5px 5px;            /* menor espaçamento interno */
+  font-size: 20px!important;            /* fonte pequena */
+  font-weight: normal;          /* peso da letra */
+  cursor: pointer;  
 }
 
 .btn-editar:hover {
-  background-color: rgb(36, 211, 114); 
+  background-color: rgb(25, 136, 114); 
   transform: scale(1.03);
   color: #000;
 }
