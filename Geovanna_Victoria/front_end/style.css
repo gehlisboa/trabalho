@@ -288,8 +288,7 @@ li{
 .news-card:hover {
   background-color: rgb(53, 17, 83);
   transform: scale(1.03);
-  color: #000;
-
+ 
   border-color: #d26bff;
   box-shadow:
     0 0 5px   #d26bff,
